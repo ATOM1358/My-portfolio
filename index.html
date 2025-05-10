@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เว็บไซต์ของฉัน</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ปุ่มเมนูแบบ 3 ขีด */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #34495e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menuitem {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top-header">
+    <div class="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="menuitem">ประวัติส่วนตัว</a>
+      <a href="education.html" class="menuitem">ประวัติการศึกษา</a>
+      <a href="certificate.html" class="menuitem">เกียรติบัตร</a>
+      <a href="grades.html" class="menuitem">ผลการเรียน</a>
+      <a href="gallery.html" class="menuitem">ภาพกิจกรรม</a>
+      <a href="contact.html" class="menuitem">ช่องทางการติดต่อ</a>
+      <a href="myprojact.html" class="menuitem">Projact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1>ยินดีต้อนรับสู่เว็บไซต์ของนาย ณัทพัช นาครัตน์</h1>
+    </section>
+
+    <section class="contentdeta">
+      <p>ชื่อ : นาย ณัทพัช นาครัตน์ (Nattapat Nakkarat)</p>
+      <p>ชื่อเล่น : อะตอม (Atom)</p>
+      <p>วันเกิด : 13 กรกฎาคม 2551 (13/7/2008)</p>
+      <p>เชื้อชาติ : ไทย</p>
+      <p>สัญชาติ : ไทย</p>
+      <p>ศาสนา : พุทธ</p>
+      <p>ที่อยู่ : 170/29 คู้บอน27 แยก60</p>
+      <p>แขวงท่าแร้ง เขตบางเขน กรุงเทพมหานคร 10220</p>
+      <p>งานอดิเรก : ศึกษาค้นคว้าการเขียนโปรแกรม</p>
+      <p>ความสามารถ : การเขียนโปรแกรม python , C , HTML , CSS (เบื้องต้น)</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nattapat. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+
+</html>
