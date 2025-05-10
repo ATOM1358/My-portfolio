@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เว็บไซต์ของฉัน</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="top-header">
+    <!-- ปุ่มสำหรับมือถือ -->
+    <div class="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- เมนู -->
+    <div class="nav-links">
+      <a href="index.html" class="menuitem">ประวัติส่วนตัว</a>
+      <a href="education.html" class="menuitem">ประวัติการศึกษา</a>
+      <a href="certificate.html" class="menuitem">เกียรติบัตร</a>
+      <a href="grades.html" class="menuitem">ผลการเรียน</a>
+      <a href="gallery.html" class="menuitem">ภาพกิจกรรม</a>
+      <a href="contact.html" class="menuitem">ช่องทางการติดต่อ</a>
+      <a href="myprojact.html" class="menuitem">Projact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1>Projact ของฉัน</h1>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nattapat. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

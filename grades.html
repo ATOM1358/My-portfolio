@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลการเรียน</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="menuitem">ประวัติส่วนตัว</a>
+            <a href="education.html" class="menuitem">ประวัติการศึกษา</a>
+            <a href="certificate.html" class="menuitem">เกียรติบัตร</a>
+            <a href="grades.html" class="menuitem">ผลการเรียน</a>
+            <a href="gallery.html" class="menuitem">ภาพกิจกรรม</a>
+            <a href="contact.html" class="menuitem">ช่องทางการติดต่อ</a>
+            <a href="myprojact.html" class="menuitem">Projact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1>ผลการเรียน</h1>
+            <p>ข้อมูลเกี่ยวกับผลการเรียนของ</p>
+        </section>
+    </main>
+
+    <section class="schoolrec">
+        <div class="schoolrecbox">
+            <img src="img/1_91.jpg" alt="เกียรติบัตร" class="schoolimg">
+            <p class="schooltext">มัธยมศึกษาปีที่ 1 เทอม 1</p>
+            <p>GPA : 3.82</p>
+        </div>
+
+        <div class="schoolrecbox">
+            <img src="img/1_92.jpg" alt="เกียรติบัตร" class="schoolimg">
+            <p class="certificate_text">มัธยมศึกษาปีที่ 1 เทอม 2</p>
+            <p>GPA : 3.64</p>
+        </div>
+
+        <div class="schoolrecbox">
+            <img src="img/2_41.jpg" alt="เกียรติบัตร" class="schoolimg">
+            <p class="certificate_text">มัธยมศึกษาปีที่ 2 เทอม 1</p>
+            <p>GPA : 3.57</p>
+        </div>
+
+        <div class="schoolrecbox">
+            <img src="img/2_42.jpg" alt="เกียรติบัตร" class="schoolimg">
+            <p class="certificate_text">มัธยมศึกษาปีที่ 2 เทอม 2</p>
+            <p>GPA : 3.85</p>
+        </div>
+
+        <div class="schoolrecbox">
+            <img src="img/3_41.jpg" alt="เกียรติบัตร" class="schoolimg">
+            <p class="certificate_text">มัธยมศึกษาปีที่ 3 เทอม 1</p>
+            <p>GPA : 3.87</p>
+        </div>
+
+        <div class="schoolrecbox">
+            <img src="img/3_42.jpg" alt="เกียรติบัตร" class="schoolimg">
+            <p class="certificate_text">มัธยมศึกษาปีที่ 3 เทอม 2</p>
+            <p>GPA : 3.87</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nattapat. All Rights Reserved.</p>
+    </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+
+</html>

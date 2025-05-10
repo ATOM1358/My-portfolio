@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ช่องทางการติดต่อ</title>
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="nav-links">
+            <a href="index.html" class="menuitem">ประวัติส่วนตัว</a>
+            <a href="education.html" class="menuitem">ประวัติการศึกษา</a>
+            <a href="certificate.html" class="menuitem">เกียรติบัตร</a>
+            <a href="grades.html" class="menuitem">ผลการเรียน</a>
+            <a href="gallery.html" class="menuitem">ภาพกิจกรรม</a>
+            <a href="contact.html" class="menuitem">ช่องทางการติดต่อ</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1>ช่องทางการติดต่อ</h1>
+            <p>กรุณากรอกข้อมูลในฟอร์มด้านล่างเพื่อติดต่อเรา</p>
+
+            <form id="contact-form" action="https://formsubmit.co/formessunatta@gmail.com" method="POST" class="contact-form">
+                <label for="name">ชื่อ:</label>
+                <input type="text" id="name" name="name" required placeholder="กรอกชื่อของคุณ">
+
+                <label for="email">อีเมล:</label>
+                <input type="email" id="email" name="email" required placeholder="กรอกอีเมลของคุณ">
+
+                <label for="message">ข้อความ:</label>
+                <textarea id="message" name="message" rows="4" required placeholder="กรอกข้อความของคุณ"></textarea>
+
+                <input type="hidden" name="_redirect" value="https://www.example.com/thank-you"> <!-- เปลี่ยน URL นี้ให้เป็น URL ที่คุณต้องการ -->
+                
+                <button type="submit" class="submit-btn">ส่งข้อความ</button>
+            </form>
+
+            <h2>or</h2>
+            <div class="iconitem">
+                <a href="https://line.me/ti/p/b3iHS9f3Tm" target="_blank"><img class="line" src="img/line.png" alt=""></a>
+                <a href="https://www.instagram.com/atom_atommmmmm?igsh=ZGU0b2IxbWYweWtk" target="_blank"><img class="ig" src="img/igicon.png" alt=""></a>
+                <a href="https://www.facebook.com/share/1Ba5jECuju/" target="_blank"><img class="facebook" src="img/facebookicon.webp" alt=""></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nattapat. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            toggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+
+        // ส่งฟอร์มด้วย fetch และแสดง SweetAlert2
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // หยุดการส่งฟอร์มชั่วคราว
+
+            const form = e.target;
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json"
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'ส่งข้อความสำเร็จ',
+                        text: 'ขอบคุณที่ติดต่อเรา!',
+                        confirmButtonText: 'ตกลง'
+                    });
+                    form.reset(); // รีเซ็ตฟอร์ม
+                } else {
+                    throw new Error('ไม่สามารถส่งข้อมูลได้');
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'เกิดข้อผิดพลาด',
+                    text: error.message
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
